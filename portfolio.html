@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="Untitled-1.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="fade-in">SAPTARISHI CHATTERJEE</h1>
+      <p class="fade-in delay">Web Developer | Designer | Student</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="fade-in-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hello! I'm a passionate web developer learning to build beautiful websites. I love coding, design, and making things work online.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="fade-in-section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Project One</h3>
+          <p>A brief description of your project.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project Two</h3>
+          <p>Another cool project you've worked on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in-section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p class="zoom-in">📧 saptarishichatterjee2005@gmail.com</p>
+      <p class="zoom-in">🔗 linkedin.com/in/saptarishi-chatterjee</p>
+      <p class="zoom-in">⚙️ https://github.com/rick1sanchez </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+    const options = { threshold: 0.1 };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    fadeSections.forEach(section => {
+      appearOnScroll.observe(section);
+    });
+  </script>
+
+</body>
+</html>
